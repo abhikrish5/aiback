@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * implements hook_mail_alter()
+ */
+function custom_ai_mail_alter(&$message) {
+	//drupal_set_message($message['id']);
+//print_r();
+  // only alter contact forms
+  if (!empty($message['id']) && $message['id'] == 'password_reset') {
+		$newdata = 'Testtttt';
+		$message['body'] = $newdata;
+	
+    }
+}
